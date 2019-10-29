@@ -1,0 +1,19 @@
+@import url('../../style/index.less');
+@col:#255; /*声明变量-变量为数字类型的，使用时可以做简单的运算*/
+.less{
+  .test(@w,@h){  /*函数mixin，可以传参*/
+    width:unit(@w,px);/*unit方法两个参数，一个是数值，一个单位*/
+    height:unit(@h,px);
+  }
+  h3{ /*标签有嵌套关系，样式也可以嵌套*/
+    color:@col*-2;/*使用变量，可以做简单的计算*/
+  }
+  .son1{
+    .test(100,100);
+    background:@themeColor;
+  }
+  .son2{
+    .test(200,100);
+    background:darkorange;
+  }
+}
